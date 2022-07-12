@@ -158,7 +158,7 @@ namespace ConsoleApp1
             #endregion
 
             #region //act 5.2
-            
+            /*
             Console.WriteLine("Введите целое число:");
             int n = Convert.ToInt32(Console.ReadLine());
             bool[,] array = new bool[n,n];
@@ -175,15 +175,44 @@ namespace ConsoleApp1
                 x = (n % 2 == 0) ? !x: x;
                 Console.WriteLine();
             }
-            Console.ReadKey();
+            Console.ReadKey(); */
             #endregion
 
             #region //act 6.1
             /*
-            Console.WriteLine(" Ввести с клавиатуры предложение. Предложение представляет собой слова, разделенные пробелом. Знаки препинания не используются.");
+            Console.WriteLine(" Ввести с клавиатуры предложение. \n Предложение представляет собой слова, разделенные пробелом. \n Знаки препинания не используются.");
             String Phrase = Console.ReadLine();
 
-            Console.ReadKey();*/
+            string[] words = Phrase.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            int LStr1, LStr2;
+            LStr1 = 0;
+            String Slong = "";
+            foreach (string s in words)
+            {
+                LStr2 = s.Length;
+                LStr1 = (LStr2 > LStr1) ? LStr2: LStr1;
+                Slong = (LStr2 == LStr1) ? s: Slong;
+            }
+            Console.WriteLine(Slong+"самое длинное слово в строке "+ LStr1+" символов");
+            Console.ReadKey();
+            */
+            #endregion
+
+            #region //act 6.2
+
+            Console.WriteLine(" Ввести с клавиатуры предложение. \n Предложение представляет собой слова, разделенные пробелом. \n Знаки препинания не используются.");
+            String Phrase = Console.ReadLine();
+            Phrase = Phrase.ToLower();
+            int LStr = Phrase.Length;
+            bool b = true;
+            for (int i = 0; i < Phrase.Length / 2; i++)
+            {
+                b = (Phrase[i] == Phrase[Phrase.Length - i - 1]) ? b: !b;
+                if (b == false)
+                break;
+            }
+            Console.WriteLine(((b != true) ? "не является" : "является") + " полиндромом") ;
+            Console.ReadKey();
             #endregion
 
         }
