@@ -127,6 +127,7 @@ namespace ConsoleApp1
             #endregion
 
             #region //act 4
+            /*
             int i = 1;
             int Sum = 0;
             int N = Convert.ToInt32(Console.ReadLine());
@@ -137,6 +138,52 @@ namespace ConsoleApp1
                 Console.WriteLine(Sum);
                 i++;
             } while (i <= N); 
+            Console.ReadKey(); */
+            #endregion
+
+
+            #region //act 5.1
+            /*
+            int[] array = new int[7];
+            float Sum = 0;
+            for (int i = 0; i < 7; i++)
+            {
+                Console.WriteLine("Введите целое число:");
+                array[i]= Convert.ToInt32(Console.ReadLine());
+                Sum = Sum + array[i];
+            }
+            Console.WriteLine("{0:f2}",Sum/7);
+            Console.ReadKey();*/
+            #endregion
+
+            #region //act 5.2
+            Console.WriteLine("Введите целое число:");
+            int n = Convert.ToInt32(Console.ReadLine());
+            
+            bool[,] array = new bool[n,n];
+            bool x = true;
+            for (int i = 0; i < n; i++)
+            {
+                
+                for (int j = 0; j < n; j++)
+                {
+                    array[i, j] = x;
+                    x = !x;
+                }
+                x = (n % 2 == 0) ? !x: x;
+                {
+
+                }
+            }
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    Console.Write("{0,2}", Convert.ToInt32(array[i, j]));  
+                }
+                Console.WriteLine();
+            }
+            
             Console.ReadKey();
             #endregion
         }
