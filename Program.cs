@@ -144,22 +144,23 @@ namespace ConsoleApp1
 
             #region //act 5.1
             /*
-            int[] array = new int[7];
+            int[] arraySA = new int[7];
             float Sum = 0;
             for (int i = 0; i < 7; i++)
             {
                 Console.WriteLine("Введите целое число:");
-                array[i]= Convert.ToInt32(Console.ReadLine());
-                Sum = Sum + array[i];
+                arraySA[i]= Convert.ToInt32(Console.ReadLine());
+                Sum = Sum + arraySA[i];
             }
             Console.WriteLine("{0:f2}",Sum/7);
-            Console.ReadKey();*/
+            Console.ReadKey();
+            */
             #endregion
 
             #region //act 5.2
+            
             Console.WriteLine("Введите целое число:");
             int n = Convert.ToInt32(Console.ReadLine());
-            
             bool[,] array = new bool[n,n];
             bool x = true;
             for (int i = 0; i < n; i++)
@@ -169,23 +170,22 @@ namespace ConsoleApp1
                 {
                     array[i, j] = x;
                     x = !x;
+                    Console.Write("{0,2}", Convert.ToInt32(array[i, j])); 
                 }
                 x = (n % 2 == 0) ? !x: x;
-                {
-
-                }
-            }
-            for (int i = 0; i < n; i++)
-            {
-                for (int j = 0; j < n; j++)
-                {
-                    Console.Write("{0,2}", Convert.ToInt32(array[i, j]));  
-                }
                 Console.WriteLine();
             }
-            
             Console.ReadKey();
             #endregion
+
+            #region //act 6.1
+            /*
+            Console.WriteLine(" Ввести с клавиатуры предложение. Предложение представляет собой слова, разделенные пробелом. Знаки препинания не используются.");
+            String Phrase = Console.ReadLine();
+
+            Console.ReadKey();*/
+            #endregion
+
         }
     }
 }
