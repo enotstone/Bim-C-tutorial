@@ -10,6 +10,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            #region // act 1-7
             #region //act 1 
             /*
             int a, b, sum;
@@ -20,7 +21,6 @@ namespace ConsoleApp1
             Console.WriteLine("Press any key");
             Console.Read(); */
             #endregion
-
             #region //act 2 
             /*
             Console.WriteLine("Enter circumference:");
@@ -31,7 +31,6 @@ namespace ConsoleApp1
             Console.WriteLine("Press any key");
             Console.ReadKey(); */
             #endregion
-
             #region //act 3.1
             /*
             int x1, x2, x3, x4, y1, y2, y3, y4;
@@ -99,7 +98,6 @@ namespace ConsoleApp1
             Console.WriteLine(answer);
             Console.ReadKey(); */
             #endregion
-
             #region //act 3.2
             /*
             int age;
@@ -125,7 +123,6 @@ namespace ConsoleApp1
             Console.WriteLine(answer);
             Console.ReadKey(); */
             #endregion
-
             #region //act 4
             /*
             int i = 1;
@@ -140,8 +137,6 @@ namespace ConsoleApp1
             } while (i <= N); 
             Console.ReadKey(); */
             #endregion
-
-
             #region //act 5.1
             /*
             int[] arraySA = new int[7];
@@ -156,7 +151,6 @@ namespace ConsoleApp1
             Console.ReadKey();
             */
             #endregion
-
             #region //act 5.2
             /*
             Console.WriteLine("Введите целое число:");
@@ -177,7 +171,6 @@ namespace ConsoleApp1
             }
             Console.ReadKey(); */
             #endregion
-
             #region //act 6.1
             /*
             Console.WriteLine(" Ввести с клавиатуры предложение. \n Предложение представляет собой слова, разделенные пробелом. \n Знаки препинания не используются.");
@@ -197,9 +190,8 @@ namespace ConsoleApp1
             Console.ReadKey();
             */
             #endregion
-
             #region //act 6.2
-
+            /*
             Console.WriteLine(" Ввести с клавиатуры предложение. \n Предложение представляет собой слова, разделенные пробелом. \n Знаки препинания не используются.");
             String Phrase = Console.ReadLine();
             Phrase = Phrase.ToLower();
@@ -207,14 +199,44 @@ namespace ConsoleApp1
             bool b = true;
             for (int i = 0; i < Phrase.Length / 2; i++)
             {
-                b = (Phrase[i] == Phrase[Phrase.Length - i - 1]) ? b: !b;
+                b = (Phrase[i] == Phrase[Phrase.Length - i - 1]) ? b : !b;
                 if (b == false)
-                break;
+                    break;
             }
-            Console.WriteLine(((b != true) ? "не является" : "является") + " полиндромом") ;
+            Console.WriteLine(((b != true) ? "не является" : "является") + " полиндромом");
+            Console.ReadKey();*/
+            #endregion
+            #region //act 7.1
+            /*
+            int[] STr = new int[2];
+            for (int i = 0; i < 2; )
+            {
+                Console.WriteLine(" Введите три стороны треугольника");
+                int a = Convert.ToInt32(Console.ReadLine());
+                int b = Convert.ToInt32(Console.ReadLine());
+                int c = Convert.ToInt32(Console.ReadLine());
+                STr[i] = CalcSquare(a, b, c);
+                i++;
+            }
+            Console.WriteLine((STr[0] > STr[1]) ? "Площадь 1 треугольника больше": "Площадь 2 треугольника больше");
+            Console.ReadKey();*/
+            #endregion
+            #region //act 7.2
+
+            Console.WriteLine(" Введите сторону куба");
+            double a = Convert.ToDouble(Console.ReadLine());
+            double PCube, SCube;
+            CalcCube(a, out PCube, out SCube);
+            Console.WriteLine("Объем куба: " +SCube+"м3 Площадь куба: "+PCube+"м2");
             Console.ReadKey();
             #endregion
-
+            #endregion
+        }
+        static void CalcCube(double a, out double P, out double S)
+        {
+            P = (a*a)*6;
+            S = a*a*a;
+            
         }
     }
 }
