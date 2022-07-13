@@ -212,31 +212,36 @@ namespace ConsoleApp1
             for (int i = 0; i < 2; )
             {
                 Console.WriteLine(" Введите три стороны треугольника");
-                int a = Convert.ToInt32(Console.ReadLine());
-                int b = Convert.ToInt32(Console.ReadLine());
-                int c = Convert.ToInt32(Console.ReadLine());
-                STr[i] = CalcSquare(a, b, c);
+                int Atr = Convert.ToInt32(Console.ReadLine());
+                int Btr = Convert.ToInt32(Console.ReadLine());
+                int Ctr = Convert.ToInt32(Console.ReadLine());
+                STr[i] = CalcSquare(Atr, Btr, Ctr);
                 i++;
             }
             Console.WriteLine((STr[0] > STr[1]) ? "Площадь 1 треугольника больше": "Площадь 2 треугольника больше");
-            Console.ReadKey();*/
+            Console.ReadKey(); */
             #endregion
             #region //act 7.2
 
-            Console.WriteLine(" Введите сторону куба");
+            Console.WriteLine("Введите сторону куба");
             double a = Convert.ToDouble(Console.ReadLine());
             double PCube, SCube;
             CalcCube(a, out PCube, out SCube);
-            Console.WriteLine("Объем куба: " +SCube+"м3 Площадь куба: "+PCube+"м2");
+            Console.WriteLine("Объем куба: {0,0:F2} м3, Площадь куба: {1,0:F2} м2.", SCube, PCube);
             Console.ReadKey();
             #endregion
             #endregion
+        }
+        static int CalcSquare(int a, int b, int c)
+        {
+            float P = (a + b + c) / 2;
+            int S = Convert.ToInt32(Math.Sqrt(P*((P-a)*(P-b)*(P-c))));
+            return S;
         }
         static void CalcCube(double a, out double P, out double S)
         {
             P = (a*a)*6;
             S = a*a*a;
-            
-        }
+         }
     }
 }
